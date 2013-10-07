@@ -45,10 +45,11 @@ def post_goals():
   return ""   
 
 @app.route('/goals/today', methods = ['GET'])
+@crossdomain(origin='*', headers='Content-Type')
 def get_goals_today():
    cur = g.db.execute("select id, description, done, feedback, date_created from goals where date_created = date('now') order by id desc")
    goals = [dict(id=row[0], description=row[1], done=row[2], feedback=row[3], date_created=row[4]) for row in cur.fetchall()]
-   return jsonify({'goals': goals})
+   return json.dumps(goals)
 
 @app.route('/goals/<int:goal_id>', methods = ['GET'])
 @crossdomain(origin='*', headers='Content-Type')

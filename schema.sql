@@ -7,6 +7,6 @@ create table goals (
   date_created text not null
 );
 
-insert into goals (description,date_created) VALUES ("my first ever goal","2013-10-03");
-insert into goals (description,date_created) VALUES ("my second ever goal","2013-10-02");
-insert into goals (description,date_created) VALUES ("my third ever goal","2013-10-03");
+insert into goals (description,date_created,done) VALUES ("Sample: Do a cartwheel","2013-10-03",1);
+insert into goals (description,date_created,done) VALUES ("Sample: Read french book for 30mins","2013-10-02",1);
+insert into goals (description,date_created,done,feedback) VALUES ("Sample: Do a backflip","2013-10-03",2,"Gave myself a nosebleed");
