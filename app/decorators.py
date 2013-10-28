@@ -1,6 +1,7 @@
 from datetime import timedelta
 from flask import make_response, request, current_app
 from functools import update_wrapper
+from app import models
 
 def crossdomain(origin=None, methods=None, headers=None,
                 max_age=21600, attach_to_all=True,
